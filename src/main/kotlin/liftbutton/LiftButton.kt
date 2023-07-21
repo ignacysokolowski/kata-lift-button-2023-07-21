@@ -1,8 +1,10 @@
 package liftbutton
 
 class LiftButton {
-    val isLit: Boolean = true
+    var isLit: Boolean = false
+        private set
 
     fun press() {
+        isLit = true
     }
 }
