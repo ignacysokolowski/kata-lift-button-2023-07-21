@@ -11,7 +11,7 @@ class LiftButton {
         }
     }
 
-    fun doorsOpened() {
+    fun liftDoorsOpened() {
         areLiftDoorsOpen = true
         isLit = false
     }

@@ -18,12 +18,12 @@ class LiftButtonTest {
 
     @Test fun `turns the lamp off when the doors open`() {
         button.press()
-        button.doorsOpened()
+        button.liftDoorsOpened()
         assertFalse(button.isLit)
     }
 
     @Test fun `does not turn the lamp on when pressed while the doors are open`() {
-        button.doorsOpened()
+        button.liftDoorsOpened()
         button.press()
         assertFalse(button.isLit)
     }
