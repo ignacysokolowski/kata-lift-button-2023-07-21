@@ -7,4 +7,8 @@ class LiftButton {
     fun press() {
         isLit = true
     }
+
+    fun doorsOpened() {
+        isLit = false
+    }
 }
