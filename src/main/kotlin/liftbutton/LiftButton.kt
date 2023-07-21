@@ -1,14 +1,18 @@
 package liftbutton
 
 class LiftButton {
+    private var areLiftDoorsOpen: Boolean = false
     var isLit: Boolean = false
         private set
 
     fun press() {
-        isLit = true
+        if (!areLiftDoorsOpen) {
+            isLit = true
+        }
     }
 
     fun doorsOpened() {
+        areLiftDoorsOpen = true
         isLit = false
     }
 }
