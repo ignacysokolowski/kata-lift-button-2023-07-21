@@ -5,26 +5,27 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class LiftButtonTest {
-    private val button = LiftButton()
+    private val lamp = Lamp()
+    private val button = LiftButton(lamp)
 
     @Test fun `turns the lamp on when pressed`() {
         button.press()
-        assertTrue(button.isLit)
+        assertTrue(lamp.isOn)
     }
 
     @Test fun `does not lit before pressed`() {
-        assertFalse(button.isLit)
+        assertFalse(lamp.isOn)
     }
 
     @Test fun `turns the lamp off when the doors open`() {
         button.press()
         button.liftDoorsOpened()
-        assertFalse(button.isLit)
+        assertFalse(lamp.isOn)
     }
 
     @Test fun `does not turn the lamp on when pressed while the doors are open`() {
         button.liftDoorsOpened()
         button.press()
-        assertFalse(button.isLit)
+        assertFalse(lamp.isOn)
     }
 }

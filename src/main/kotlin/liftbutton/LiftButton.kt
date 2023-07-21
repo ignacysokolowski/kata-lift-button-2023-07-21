@@ -1,18 +1,16 @@
 package liftbutton
 
-class LiftButton {
+class LiftButton(private val lamp: Lamp) {
     private var areLiftDoorsOpen: Boolean = false
-    var isLit: Boolean = false
-        private set
 
     fun press() {
         if (!areLiftDoorsOpen) {
-            isLit = true
+            lamp.turnOn()
         }
     }
 
     fun liftDoorsOpened() {
         areLiftDoorsOpen = true
-        isLit = false
+        lamp.turnOff()
     }
 }
